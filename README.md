@@ -1,1 +1,1 @@
-# squadpage-sveltekit
+# Squadpage SvelteKit 
