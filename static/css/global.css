@@ -1,0 +1,14 @@
+:root {
+  --primary:hsl(144.78deg 100% 14.53%);
+  --secondary: hsl(144.78deg 100% 96.1%);
+}
+
+body {
+  font-family: Helvetica;
+  color:var(--primary);
+  background: var(--secondary);
+}
+
+a {
+  color: var(--primary)
+}

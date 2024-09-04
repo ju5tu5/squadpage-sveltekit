@@ -1,1 +1,1 @@
-export const csr = false
+export let csr = false
