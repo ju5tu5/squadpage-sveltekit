@@ -1,11 +1,35 @@
 <script>
+  import { onMount } from 'svelte'
+  //console.log(document) // document is not defined, because component isn't mounted (rendered in the DOM) yet
+
+  onMount(() => {
+    console.log(document)
+  })
+
   export let data
 
   function checkAvatarUrl (url) {
     return url.startsWith('https://') 
   }
+
+  function followPointer(event){
+    const cards = document.querySelectorAll('ul li')
+    const width = window.innerWidth
+    const height = window.innerHeight
+
+    let cx = Math.ceil(width / 1.8)
+    let cy = Math.ceil(height / 1.8)
+    let dx = event.pageX - cx
+    let dy = event.pageY - cy
+
+    cards.forEach(card => {
+      card.style.setProperty('--mouse-x', `${dx}px`)
+      card.style.setProperty('--mouse-y', `${dy}px`)
+    })
+  }
 </script>
 
+<svelte:window on:mousemove={followPointer} />
 
 <h1>Squad 1D</h1>
 
@@ -32,7 +56,7 @@
 <style>
   ul {
     list-style: none;
-    padding:1em 0;
+    padding:5em 0;
     display:flex;
     gap:1rem;
     align-items:start;
@@ -42,6 +66,10 @@
   }
   
   ul li {
+    --mouse-x:0;
+    --mouse-y:0;
+
+    transform: translate3d(calc(var(--mouse-x) / 10), calc(var(--mouse-y) / 10), 0);  
     scroll-snap-align: center;
   }
 
