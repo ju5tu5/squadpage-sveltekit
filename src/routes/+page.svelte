@@ -45,11 +45,12 @@
     scroll-snap-align: center;
   }
 
+
   @supports (animation-timeline: scroll()) {
     ul li {
         view-timeline-name: --happy-scroller;
         view-timeline-axis: inline;
-        view-timeline-inset: 0% 0%;
+        view-timeline-inset: -10% -10%;
         animation-range: 25% 25%;
 
         animation: linear appear both;
@@ -113,6 +114,6 @@
   img {
     max-width:100%;
     aspect-ratio: 1/1;
-    object-fit: contain;
+    object-fit: cover;
   }
 </style>
