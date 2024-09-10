@@ -20,4 +20,3 @@
   on:input={handleInput}
 >
 <label for="confirm">Bevestig dat wij al jouw data mogen doorsluizen naar Google!</label>
-  
