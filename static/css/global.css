@@ -1,13 +1,27 @@
 :root {
-  --primary:hsl(144.78deg 100% 14.53%);
-  --secondary:#f0f0f0;
+  --primary:hsl(0, 0%, 100%);
+  --secondary:oklch(18.6% 0.109 269.13);
+  --angle: 42deg;
 }
-
+html {
+  height:100%;
+}
 body {
   font-family: Helvetica;
-  color:var(--primary);
+  color: var(--primary);
   background: var(--secondary);
+  background-image: linear-gradient(
+      var(--angle) in oklch,
+      oklch(66.85% 0.186 298.97) 20%,
+      oklch(18.6% 0.109 269.13) 100%
+  );
+  background-repeat: no-repeat;
+  background-size:c over;
+  background-position: center;
   font-size: 2rem;
+  line-height: 1.5;
+  min-height: 100%;
+  margin: 2rem;
 }
 
 a {
