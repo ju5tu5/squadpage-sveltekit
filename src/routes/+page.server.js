@@ -1,4 +1,4 @@
-import fetchJson from "$lib/fetch-json"
+import fetchJson from '$lib/fetch-json'
 
 export async function load() {
   const url = 'https://fdnd.directus.app/items/person/?filter={"squad_id":3}'
@@ -6,7 +6,6 @@ export async function load() {
   const persons = await fetchJson(url)
 
   return {
-    persons: persons.data
+    persons: persons.data,
   }
 }
-
