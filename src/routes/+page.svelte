@@ -95,12 +95,12 @@
     overflow:hidden;
     padding:0 0 .25rem;
     text-decoration:none;
-    background-color: hsl(145, 98%, 22%);
-    color:hsl(68, 100%, 68%);
+    background-color: hsl(276, 97%, 39%);
+    color:hsl(323, 97%, 77%);
     transition:.25s
   }
   ul li a:hover {
-    background-color: hsl(145, 87%, 15%);  
+    background-color: hsl(282, 65%, 27%);  
   }
   span {
     display:flex;
