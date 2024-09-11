@@ -1,9 +1,10 @@
 <script>
   import { onMount } from 'svelte'
+  
   //console.log(document) // document is not defined, because component isn't mounted (rendered in the DOM) yet
 
   onMount(() => {
-    console.log(document)
+    console.log(document) // document is defined, because it's called in the onMount function
   })
 
   export let data
@@ -13,6 +14,8 @@
   }
 
   function followPointer(event){
+    console.log(document) // document is defined, because the eventListener is set by the svelte:window element (rule 34)
+
     const cards = document.querySelectorAll('ul li')
     const width = window.innerWidth
     const height = window.innerHeight
@@ -69,7 +72,7 @@
     --mouse-x:0;
     --mouse-y:0;
 
-    transform: translate3d(calc(var(--mouse-x) / 10), calc(var(--mouse-y) / 10), 0);  
+    transform: translate3d(calc(var(--mouse-x) / 10), calc(var(--mouse-y) / 10), 0);
     scroll-snap-align: center;
   }
 
@@ -124,12 +127,12 @@
     overflow:hidden;
     padding:0 0 .25rem;
     text-decoration:none;
-    background-color: hsl(145, 98%, 22%);
-    color:hsl(68, 100%, 68%);
+    background-color: hsl(276, 97%, 39%);
+    color:hsl(323, 97%, 77%);
     transition:.25s
   }
   ul li a:hover {
-    background-color: hsl(145, 87%, 15%);  
+    background-color: hsl(282, 65%, 27%);  
   }
   span {
     display:flex;
